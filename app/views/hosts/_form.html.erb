@@ -1,0 +1,23 @@
+<%= form_for @host do |f| %>
+	
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+	
+	<%= f.label :interval %>
+	<%= f.select :interval, [
+			["every second",        1],
+			["every 5 seconds",     5],
+			["every 10 seconds",   10],
+			["every 30 seconds",   30],
+			["every minute",       60],
+			["every 5 minutes",   300],
+			["every 10 minutes",  600],
+			["every 30 minutes", 1800],
+			["every hour",       3600]
+		] %>
+	
+	<label><%= f.check_box :enabled %> enabled</label>
+	
+	<p><%= f.submit class: 'btn btn-primary' %> &mdash; <%= link_to 'Cancel', hosts_path, class: 'btn' %></p>
+	
+<% end %>

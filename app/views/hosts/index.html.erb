@@ -1,0 +1,28 @@
+<h1>Hosts</h1>
+
+<p>
+	<%= link_to 'Add', new_host_path, class: 'btn btn-success' %>
+	<%= link_to 'Perform Pings', ping_hosts_path, 
+			method: 'post', 
+			disable_with: 'Please wait...', 
+			class: 'btn btn-primary' %>
+</p>
+
+<table class="table table-bordered">
+<% @hosts.each do |host| %>
+<tr>
+	<td class="span2 center">
+		<% if host.last_ping %>
+			<p><%= content_tag :span, host.last_ping.response_code, class: "label label-large label-" + (host.last_ping.response_code < 500 ? 'success' : 'important') %></p>
+			<p><%= content_tag :span, ("%.3f sec" % host.last_ping.response_time), class: "label" %></p>
+		<% else %>
+			<p><%= content_tag :span, "???", class: "label label-large" %></p>
+			<p><%= content_tag :span, "???", class: "label" %></p>
+		<% end %>
+	</td>
+	<td>
+		<p><strong><%= link_to host.url, host %></strong> (<%= link_to raw("&rarr;"), host.url %>)</p>
+	</td>
+</tr>
+<% end %>
+</table>
