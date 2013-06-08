@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130608082600) do
+ActiveRecord::Schema.define(version: 20130608211631) do
 
   create_table "hosts", force: true do |t|
     t.text     "url"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20130608082600) do
     t.integer  "response_code"
     t.text     "response_header"
     t.float    "response_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "nickname"
+    t.string   "twitter_uid"
+    t.text     "twitter_hash"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

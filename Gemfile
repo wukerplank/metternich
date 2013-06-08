@@ -21,6 +21,10 @@ group :production do
   gem 'mysql2'
 end
 
+# Authentication
+gem 'omniauth'
+gem 'omniauth-twitter'
+
 # CSS, Javascript, etc.
 gem 'sass-rails', '~> 4.0.0.rc1'
 gem 'uglifier', '>= 1.3.0'

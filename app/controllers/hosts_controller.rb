@@ -1,15 +1,15 @@
 class HostsController < ApplicationController
   
   def index
-    @hosts = Host.order('hosts.interval, hosts.url')
+    @hosts = current_user.hosts.order('hosts.interval, hosts.url')
   end
   
   def new
-    @host = Host.new
+    @host = current_user.hosts.build
   end
   
   def create
-    @host = Host.new(host_params)
+    @host = current_user.hosts.build(host_params)
     if @host.save
       redirect_to hosts_path
     else
@@ -18,7 +18,7 @@ class HostsController < ApplicationController
   end
   
   def ping
-    @hosts = Host.order('hosts.interval, hosts.url')
+    @hosts = current_user.hosts.order('hosts.interval, hosts.url')
     @hosts.each do |h|
       h.pings.build.perform
     end
