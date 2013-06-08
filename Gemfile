@@ -8,7 +8,6 @@ group :test, :development do
   gem 'binding_of_caller'
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'figaro'
   gem 'mina'
   gem 'pry'
   gem 'rspec-rails'
@@ -20,6 +19,9 @@ end
 group :production do
   gem 'mysql2'
 end
+
+# Configuration
+gem 'figaro'
 
 # Authentication
 gem 'omniauth'
