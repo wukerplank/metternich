@@ -10,8 +10,8 @@ Metternich::Application.routes.draw do
     end
   end
   
-  post   '/auth/:provider/callback' => 'sessions#create'
-  post   '/auth/failure'            => 'sessions#oauth_failure'
+  match  '/auth/:provider/callback' => 'sessions#create',        via: [:get, :post]
+  match  '/auth/failure'            => 'sessions#oauth_failure', via: [:get, :post]
   delete '/logout' => 'sessions#destroy'
   
   get '/welcome' => 'welcome#index', as: 'welcome'
