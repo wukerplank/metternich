@@ -4,7 +4,7 @@
 	<%= link_to 'Add', new_host_path, class: 'btn btn-success' %>
 	<%= link_to 'Perform Pings', ping_hosts_path, 
 			method: 'post', 
-			disable_with: 'Please wait...', 
+			data: {disable_with: 'Please wait...'}, 
 			class: 'btn btn-primary' %>
 </p>
 
