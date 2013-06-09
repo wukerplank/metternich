@@ -8,13 +8,14 @@ group :test, :development do
   gem 'binding_of_caller'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'launchy'      # to open capybara pages in the browser (save_and_open_page)
   gem 'mina'
   gem 'pry'
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'thin'
   gem 'quiet_assets'
-  gem 'webmock'
+  gem 'webmock'      # to mock Net::HTTP requests
 end
 
 group :production do

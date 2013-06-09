@@ -2,15 +2,13 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
-require 'webmock/rspec'
+# require 'rspec/autorun'
 require 'capybara/rspec'
+require 'capybara/rails'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
-
-OmniAuth.config.test_mode = true
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -35,4 +33,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+  
+  config.include(OmniauthMacros)
 end
+
+OmniAuth.config.test_mode = true
