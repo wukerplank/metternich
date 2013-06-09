@@ -1,8 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :host do
-    url "MyText"
-    owner_id 1
+  factory :valid_host, :class=>'Host' do
+    sequence(:url){|n| "http://www.example-#{n}.com"}
+    owner_id 0
   end
 end

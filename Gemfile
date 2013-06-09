@@ -14,6 +14,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'thin'
   gem 'quiet_assets'
+  gem 'webmock'
 end
 
 group :production do
