@@ -26,5 +26,10 @@ module Metternich
       generate.assets false
       generate.view_specs false
     end
+    
+    config.assets.precompile += ["fontawesome-webfont.ttf",
+                             "fontawesome-webfont.eot",
+                             "fontawesome-webfont.svg",
+                             "fontawesome-webfont.woff"]
   end
 end
