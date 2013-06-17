@@ -21,6 +21,7 @@ class HostsController < ApplicationController
     @hosts = current_user.hosts.order('hosts.interval, hosts.url')
     @hosts.each do |h|
       h.pings.build.perform
+      h.touch
     end
     redirect_to hosts_path
   end

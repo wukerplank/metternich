@@ -28,8 +28,8 @@ module Metternich
     end
     
     config.assets.precompile += ["fontawesome-webfont.ttf",
-                             "fontawesome-webfont.eot",
-                             "fontawesome-webfont.svg",
-                             "fontawesome-webfont.woff"]
+                                 "fontawesome-webfont.eot",
+                                 "fontawesome-webfont.svg",
+                                 "fontawesome-webfont.woff"]
   end
 end

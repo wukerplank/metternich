@@ -1,0 +1,19 @@
+<% cache host do %>
+<tr>
+	<td class="span2 center">
+		<% if host.last_ping %>
+			<p><%= content_tag :span, host.last_ping.response_code, class: "label label-large label-" + (host.last_ping.response_code < 500 ? 'success' : 'important') %></p>
+			<p><%= content_tag :span, ("%.3f sec" % host.last_ping.response_time), class: "label" %></p>
+		<% else %>
+			<p><%= content_tag :span, "???", class: "label label-large" %></p>
+			<p><%= content_tag :span, "???", class: "label" %></p>
+		<% end %>
+	</td>
+	<td>
+		<p><strong><%= link_to host.url, host %></strong> (<%= link_to raw("&rarr;"), host.url %>)</p>
+		<p>
+			<div class="sparklines" values="<%= host.pings.order('created_at DESC').limit('50').map(&:response_time).join(', ') %>"></div>
+		</p>
+	</td>
+</tr>
+<% end %>
