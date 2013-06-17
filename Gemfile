@@ -15,6 +15,9 @@ group :test, :development do
   gem 'sqlite3'
   gem 'thin'
   gem 'quiet_assets'
+end
+
+group :test do
   gem 'webmock'      # to mock Net::HTTP requests
 end
 
