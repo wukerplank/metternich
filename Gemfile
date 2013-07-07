@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc1'
+gem 'rails', '4.0.0'
 
 group :test, :development do
   gem 'better_errors'
@@ -9,8 +9,10 @@ group :test, :development do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy'      # to open capybara pages in the browser (save_and_open_page)
+  gem 'letter_opener'
   gem 'mina'
   gem 'pry'
+  gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'thin'
