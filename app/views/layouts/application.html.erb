@@ -32,7 +32,7 @@
 					</ul>
 				<% else %>
 					<ul class="nav pull-right">
-						<li><%= link_to 'Sign in via Twitter', (Rails.env=='development' ? '/auth/developer' : '/auth/twitter'), id: 'signin' %></li>
+						<li><%= link_to 'Sign in via OpenID', '/auth/openid', id: 'signin' %></li>
 					</ul>
 				<% end %>
 			</div>

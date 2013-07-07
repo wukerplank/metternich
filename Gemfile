@@ -32,7 +32,7 @@ gem 'figaro'
 
 # Authentication
 gem 'omniauth'
-gem 'omniauth-twitter'
+gem 'omniauth-openid'
 
 # CSS, Javascript, etc.
 gem 'sass-rails', '~> 4.0.0.rc1'

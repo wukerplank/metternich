@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130707072200) do
+ActiveRecord::Schema.define(version: 20130608211631) do
 
   create_table "hosts", force: true do |t|
     t.text     "url"
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 20130707072200) do
 
   create_table "users", force: true do |t|
     t.string   "nickname"
-    t.string   "twitter_uid"
-    t.text     "twitter_hash"
+    t.string   "omniauth_uid"
+    t.string   "email"
+    t.string   "remember_me_token", limit: 32
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email"
   end
 
 end

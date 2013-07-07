@@ -6,9 +6,10 @@ class ApplicationController < ActionController::Base
   before_filter :user_required
   
   def current_user
-    if session[:user_id]
-      return @current_user ||= User.find(session[:user_id])
+    if user = User.find_by_id(session[:user_id]) || User.find_by_remember_me_token(cookies[:remember_me])
+      return user
     end
+    session[:user_id] = nil
     return false
   end
   helper_method :current_user

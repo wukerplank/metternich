@@ -1,0 +1,11 @@
+<%= form_for @user, :html=>{:id=>'new_user_form'} do |f| %>
+	
+	<%= f.label :nickname %>
+	<%= f.text_field :nickname %>
+	
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	
+	<p><%= f.submit 'Sign up' %></p>
+	
+<% end %>
